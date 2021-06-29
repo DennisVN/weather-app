@@ -1,8 +1,23 @@
+const timeEl = document.getElementById('time');
+const dateEl = document.getElementById('date');
 let button = document.querySelector('.button')
 let inputValue = document.querySelector('.inputValue')
 let name = document.querySelector('.name');
 let desc = document.querySelector('.desc');
 let temp = document.querySelector('.temp');
+// Update date and time
+setInterval(() => {
+    const time = new Date();
+    const month = time.getMonth();
+    const date = time.getDate();
+    const day = time.getDay();
+    const hour = time.getHours();
+    const hoursin12HrFormat = hour > 13 ? hour %12: hour; 
+    const minutes = time.getMinutes();
+    const amPm = hour >=12 ? "PM" : "AM";
+
+    timeEl.innerHTML = hoursin12HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
+}, 1000)
 
 clickButton = () => {
     

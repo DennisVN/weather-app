@@ -6,7 +6,7 @@ let name = document.querySelector('.name');
 let desc = document.querySelector('.desc');
 let temp = document.querySelector('.temp');
 // Update date and time
-setInterval(() => {
+setInterval(() => { //clock & date (put in README)
     const time = new Date();
     const month = time.getMonth();
     const date = time.getDate();
@@ -27,7 +27,7 @@ clickButton = () => {
         .then (data => {
         let nameValue = data ['name'];
         let tempValue = data ['main']['temp'];
-        let  descValue = data ['weather'][0]['description'];
+        let descValue = data ['weather'][0]['description'];
 
         name.innerHTML = nameValue;
         temp.innerHTML = tempValue;

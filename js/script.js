@@ -5,6 +5,8 @@ let inputValue = document.querySelector('.inputValue')
 let name = document.querySelector('.name');
 let desc = document.querySelector('.desc');
 let temp = document.querySelector('.temp');
+//let dayToday = document.querySelector('.day-today');
+
 // Update date and time
 setInterval(() => { //clock & date (put in README)
     const time = new Date();
@@ -22,27 +24,25 @@ setInterval(() => { //clock & date (put in README)
 clickButton = () => {
     
     document.getElementById("run").addEventListener("click", function() {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
+        fetch(`http://api.openweathermap.org/data/2.5/forecast?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
         .then(response => response.json())
         .then (data => {
-        let nameValue = data ['name'];
-        let tempValue = data ['main']['temp'];
-        let descValue = data ['weather'][0]['description'];
+            nameValue = inputValue.value;
 
-        name.innerHTML = nameValue;
-        temp.innerHTML = tempValue;
-        desc.innerHTML = descValue;
+            
+            console.log(inputValue.value);
+            console.log(nameValue);
+            console.log(data.list);
     })
    
 
-.catch(err => alert("Wrong City")) 
+        .catch(err => console.log(err)) 
     })
 };
 clickButton()
 
+
 /* WORKS : http://api.openweathermap.org/data/2.5/weather?&units=metric&q=Antwerp&appid=ba4146bd03d9855da2254b9e254e92ad */
 
-// TODO : Fix time & date
-// TODO : Add Clock, Add Date , (location ?)
-// TODO : Insert the 4 next days HTML
-// TODO : Link otherDays with JS
+// FIXED LINK (DUMBASS) ... 
+// REDO HTML

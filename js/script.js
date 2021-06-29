@@ -5,7 +5,7 @@ let desc = document.querySelector('.desc');
 let temp = document.querySelector('.temp');
 
 clickButton = () => {
-    console.log(document.getElementById("run"))
+    
     document.getElementById("run").addEventListener("click", function() {
         fetch(`http://api.openweathermap.org/data/2.5/weather?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
         .then(response => response.json())
@@ -26,3 +26,8 @@ clickButton = () => {
 clickButton()
 
 /* WORKS : http://api.openweathermap.org/data/2.5/weather?&units=metric&q=Antwerp&appid=ba4146bd03d9855da2254b9e254e92ad */
+
+// TODO : Fix time & date
+// TODO : Add Clock, Add Date , (location ?)
+// TODO : Insert the 4 next days HTML
+// TODO : Link otherDays with JS

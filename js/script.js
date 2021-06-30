@@ -32,14 +32,34 @@ clickButton = () => {
     })
 };
 clickButton()
+//Add date 
+function setDate(d){
+    for (let i = 0; i < 5; i++) {
+        let months = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+        let weekDays = [
+            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday'
+        ];
+        let day = weekDays[d.getDay()];
+        let date = d.getDate();
+        let month = months[d.getMonth()];
+        let year = d.getFullYear();
+
+        return `${day} ${date} ${month} ${year}`
+    }
+    console.log(months);
+}
 // Change HTML elements after fetching
 function displayResults (weather) {
     cityDiv.innerText = `${weather.city.name}, ${weather.city.country}`;
+    dateDiv.innerText = setDate(current);
     currentTemperatureDiv.innerHTML = `${Math.round(weather.list[0].main.temp)}<span> ° C</span>`;
     descriptionDiv.innerText = `${weather.list[0].weather[0].description}`;
     averageDiv.innerText = `Feels like ` + Math.round(weather.list[0].main.feels_like) + ' °c';
 }
-//let dayToday = document.querySelector('.day-today');
+
 
 
 
@@ -75,21 +95,3 @@ clickButton = () => {
     })
 };
 clickButton()*/
-/* Add date function
-function setDate(d){
-    for (let i = 0; i < 5; i++) {
-        let months = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-        ];
-        let weekdays = [
-            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday'
-        ];
-        let day = weekDays[d.getDay()];
-        let date = d.getDate();
-        let month = months [d.getMonth];
-        let year = d.getFullYear();
-
-        return `${day} ${date} ${month} ${year}`
-    }
-}*/

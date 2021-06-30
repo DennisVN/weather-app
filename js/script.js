@@ -22,21 +22,25 @@ const dateDayTwo = document.querySelector('.location-two .date-two');
 const dayTwoTemperatureDiv = document.querySelector('.current-two .temperature-two')
 const weatherDayTwo = document.querySelector('.current-two .weather-two');
 const minMaxDayTwo = document.querySelector('.min-max-two');
+const weatherIconDayTwo = document.querySelector('.weather-icon-two');
 
 const dateDayThree = document.querySelector('.location-three .date-three');
 const dayThreeTemperatureDiv = document.querySelector('.current-three .temperature-three')
 const weatherDayThree = document.querySelector('.current-three .weather-three');
 const minMaxDayThree = document.querySelector('.min-max-three');
+const weatherIconDayThree = document.querySelector('.weather-icon-three');
 
 const dateDayFour = document.querySelector('.location-four .date-four');
 const dayFourTemperatureDiv = document.querySelector('.current-four .temperature-four')
 const weatherDayFour = document.querySelector('.current-four .weather-four');
 const minMaxDayFour = document.querySelector('.min-max-four');
+const weatherIconDayFour = document.querySelector('.weather-icon-four');
 
 const dateDayFive = document.querySelector('.location-five .date-five');
 const dayFiveTemperatureDiv = document.querySelector('.current-five .temperature-five')
 const weatherDayFive = document.querySelector('.current-five .weather-five');
 const minMaxDayFive = document.querySelector('.min-max-five');
+const weatherIconDayFive = document.querySelector('.weather-icon-five');
 
 /*setInterval(() => { //clock & date (put in README)
     const time = new Date();

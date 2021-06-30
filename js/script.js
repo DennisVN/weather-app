@@ -14,6 +14,12 @@ const dayOneTemperatureDiv = document.querySelector('.current-one .temperature-o
 const weatherDayOne = document.querySelector('.current-one .weather-one');
 const minMaxDayOne = document.querySelector('.min-max-one');
 
+const dateDayTwo = document.querySelector('.location-two .date-two');
+const dayTwoTemperatureDiv = document.querySelector('.current-two .temperature-two')
+const weatherDayTwo = document.querySelector('.current-two .weather-two');
+const minMaxDayTwo = document.querySelector('.min-max-two');
+
+
 
 clickButton = () => {
     
@@ -67,6 +73,11 @@ function displayResults (weather) {
     dayOneTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;
     weatherDayOne.innerText = `${weather.list[8].weather[0].description}`;
     minMaxDayOne.innerText = `feels like ` + Math.round(weather.list[8].main.feels_like) + `°c`;
+
+    dateDayTwo.innerText = `${weather.list[16].dt_txt}`;
+    dayTwoTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;
+    weatherDayTwo.innerText = `${weather.list[16].weather[0].description}`;
+    minMaxDayTwo.innerText = `feels like ` + Math.round(weather.list[16].main.feels_like) + `°c`;
 }
 
 

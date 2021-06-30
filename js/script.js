@@ -15,9 +15,11 @@ clickButton = () => {
     
     document.getElementById("run").addEventListener("click", function() {
         fetch(`http://api.openweathermap.org/data/2.5/forecast?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
-        .then(response => response.json())
+        .then(weather => weather.json())
+        .then(data => displayResults(data))
         .then (data => {
             let cityDiv = inputValue.value;
+            
 
             
             console.log(inputValue.value);
@@ -30,8 +32,11 @@ clickButton = () => {
     })
 };
 clickButton()
-
-
+// Change HTML elements after fetching
+function displayResults (weather) {
+    cityDiv.innerText = `${weather.city.name}, ${weather.city.country}`;
+    currentTemperatureDiv.innerHTML = `${Math.round(weather.list[0].main.temp)}<span> ° C</span>`;
+}
 //let dayToday = document.querySelector('.day-today');
 
 

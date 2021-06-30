@@ -5,10 +5,14 @@ const dateDiv = document.querySelector('.location .date');
 const currentTemperatureDiv = document.querySelector('.current .temperature');
 const descriptionDiv = document.querySelector('.current .weather');
 const averageDiv = document.querySelector('.min-max');
-const inputField = document.querySelector('.input-field');
 let current = new Date();
 const button = document.querySelector('.button')
 const inputValue = document.querySelector('.inputValue')
+// Const And Var for Forecast 
+const dateDayOne = document.querySelector('.location-one .date-one');
+const dayOneTemperatureDiv = document.querySelector('.current-one .temperature-one')
+const weatherDayOne = document.querySelector('.current-one .weather-one');
+const minMaxDayOne = document.querySelector('.min-max-one');
 
 
 clickButton = () => {
@@ -58,6 +62,11 @@ function displayResults (weather) {
     currentTemperatureDiv.innerHTML = `${Math.round(weather.list[0].main.temp)}<span> ° C</span>`;
     descriptionDiv.innerText = `${weather.list[0].weather[0].description}`;
     averageDiv.innerText = `Feels like ` + Math.round(weather.list[0].main.feels_like) + ' °c';
+
+    dateDayOne.innerText = `${weather.list[8].dt_txt}`;
+    dayOneTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;
+    weatherDayOne.innerText = `${weather.list[8].weather[0].description}`;
+    minMaxDayOne.innerText = `feels like ` + Math.round(weather.list[8].main.feels_like) + `°c`;
 }
 
 

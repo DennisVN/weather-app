@@ -42,7 +42,7 @@ const weatherDayFive = document.querySelector('.current-five .weather-five');
 const minMaxDayFive = document.querySelector('.min-max-five');
 const weatherIconDayFive = document.querySelector('.weather-icon-five');
 
-/*setInterval(() => { //clock & date (put in README)
+setInterval(() => { //clock & date (put in README)
     const time = new Date();
     const month = time.getMonth();
     const date = time.getDate();
@@ -53,7 +53,7 @@ const weatherIconDayFive = document.querySelector('.weather-icon-five');
     const amPm = hour >=12 ? "PM" : "AM";
 
     timeEl.innerHTML = hoursin12HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
-}, 1000)*/
+}, 1000)
 
 
 clickButton = () => {

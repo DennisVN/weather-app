@@ -35,8 +35,9 @@ clickButton()
 // Change HTML elements after fetching
 function displayResults (weather) {
     cityDiv.innerText = `${weather.city.name}, ${weather.city.country}`;
-    /*currentTemperatureDiv.innerHTML = `${Math.round(weather.list[0].main.temp)}<span> ° C</span>`;
-    descriptionDiv.innerText = `${weather.list[0].weather[0].description}`;*/
+    currentTemperatureDiv.innerHTML = `${Math.round(weather.list[0].main.temp)}<span> ° C</span>`;
+    descriptionDiv.innerText = `${weather.list[0].weather[0].description}`;
+    averageDiv.innerText = `Feels like ` + Math.round(weather.list[0].main.feels_like) + ' °c';
 }
 //let dayToday = document.querySelector('.day-today');
 

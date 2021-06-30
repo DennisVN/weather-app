@@ -15,6 +15,7 @@ const dateDayOne = document.querySelector('.location-one .date-one');
 const dayOneTemperatureDiv = document.querySelector('.current-one .temperature-one')
 const weatherDayOne = document.querySelector('.current-one .weather-one');
 const minMaxDayOne = document.querySelector('.min-max-one');
+const weatherIconDayOne = document.querySelector('.weather-icon-one');
 
 
 const dateDayTwo = document.querySelector('.location-two .date-two');
@@ -106,6 +107,7 @@ function displayResults (weather) {
     dayOneTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;
     weatherDayOne.innerText = `${weather.list[8].weather[0].description}`;
     minMaxDayOne.innerText = `feels like ` + Math.round(weather.list[8].main.feels_like) + `°c`;
+    weatherIconDayOne.innerHTML = document.querySelector('.weather-icon-one').src=(`http://openweathermap.org/img/wn/${weather.list[8].weather[0].icon}@2x.png`)
 
     dateDayTwo.innerText = `${weather.list[16].dt_txt}`;
     dayTwoTemperatureDiv.innerHTML = `${Math.round(weather.list[16].main.temp)}<span> ° C</span>`;

@@ -8,11 +8,13 @@ const averageDiv = document.querySelector('.min-max');
 let current = new Date();
 const button = document.querySelector('.button')
 const inputValue = document.querySelector('.inputValue')
+const weatherIcon = document.querySelector('.weather-icon');
 // Const And Var for Forecast 
 const dateDayOne = document.querySelector('.location-one .date-one');
 const dayOneTemperatureDiv = document.querySelector('.current-one .temperature-one')
 const weatherDayOne = document.querySelector('.current-one .weather-one');
 const minMaxDayOne = document.querySelector('.min-max-one');
+
 
 const dateDayTwo = document.querySelector('.location-two .date-two');
 const dayTwoTemperatureDiv = document.querySelector('.current-two .temperature-two')
@@ -33,6 +35,19 @@ const dateDayFive = document.querySelector('.location-five .date-five');
 const dayFiveTemperatureDiv = document.querySelector('.current-five .temperature-five')
 const weatherDayFive = document.querySelector('.current-five .weather-five');
 const minMaxDayFive = document.querySelector('.min-max-five');
+
+setInterval(() => { //clock & date (put in README)
+    const time = new Date();
+    const month = time.getMonth();
+    const date = time.getDate();
+    const day = time.getDay();
+    const hour = time.getHours();
+    const hoursin12HrFormat = hour > 13 ? hour %12: hour; 
+    const minutes = time.getMinutes();
+    const amPm = hour >=12 ? "PM" : "AM";
+
+    timeEl.innerHTML = hoursin12HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
+}, 1000)
 
 
 clickButton = () => {
@@ -82,6 +97,8 @@ function displayResults (weather) {
     currentTemperatureDiv.innerHTML = `${Math.round(weather.list[0].main.temp)}<span> ° C</span>`;
     descriptionDiv.innerText = `${weather.list[0].weather[0].description}`;
     averageDiv.innerText = `Feels like ` + Math.round(weather.list[0].main.feels_like) + ' °c';
+    weatherIcon.innerHTML = `${weather.list[0].weather[0].icon};`
+    //console.log(`${weather.list[0].weather[0].icon};`);// WORKS !!!
 
     dateDayOne.innerText = `${weather.list[8].dt_txt}`;
     dayOneTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;
@@ -122,20 +139,9 @@ function displayResults (weather) {
 /* WORKS : http://api.openweathermap.org/data/2.5/weather?&units=metric&q=Antwerp&appid=ba4146bd03d9855da2254b9e254e92ad */
 
 // USE LATER 
-/*
-// Update date and time WORKING CLOCK
-setInterval(() => { //clock & date (put in README)
-    const time = new Date();
-    const month = time.getMonth();
-    const date = time.getDate();
-    const day = time.getDay();
-    const hour = time.getHours();
-    const hoursin12HrFormat = hour > 13 ? hour %12: hour; 
-    const minutes = time.getMinutes();
-    const amPm = hour >=12 ? "PM" : "AM";
 
-    timeEl.innerHTML = hoursin12HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
-}, 1000)*/
+// Update date and time WORKING CLOCK
+
 /* BUTTON WORKS, ADD LATER, STOP WASTING YOUR TIME BRUH -_-" 
 
 clickButton = () => {

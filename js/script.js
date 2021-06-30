@@ -89,19 +89,24 @@ function displayResults (weather) {
     minMaxDayOne.innerText = `feels like ` + Math.round(weather.list[8].main.feels_like) + `°c`;
 
     dateDayTwo.innerText = `${weather.list[16].dt_txt}`;
-    dayTwoTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;
+    dayTwoTemperatureDiv.innerHTML = `${Math.round(weather.list[16].main.temp)}<span> ° C</span>`;
     weatherDayTwo.innerText = `${weather.list[16].weather[0].description}`;
     minMaxDayTwo.innerText = `feels like ` + Math.round(weather.list[16].main.feels_like) + `°c`;
 
     dateDayThree.innerText = `${weather.list[24].dt_txt}`;
-    dayThreeTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;
+    dayThreeTemperatureDiv.innerHTML = `${Math.round(weather.list[24].main.temp)}<span> ° C</span>`;
     weatherDayThree.innerText = `${weather.list[24].weather[0].description}`;
     minMaxDayThree.innerText = `feels like ` + Math.round(weather.list[24].main.feels_like) + `°c`;
 
     dateDayFour.innerText = `${weather.list[32].dt_txt}`;
-    dayFourTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;
+    dayFourTemperatureDiv.innerHTML = `${Math.round(weather.list[32].main.temp)}<span> ° C</span>`;
     weatherDayFour.innerText = `${weather.list[32].weather[0].description}`;
     minMaxDayFour.innerText = `feels like ` + Math.round(weather.list[32].main.feels_like) + `°c`;
+
+    dateDayFive.innerText = `${weather.list[39].dt_txt}`;
+    dayFiveTemperatureDiv.innerHTML = `${Math.round(weather.list[39].main.temp)}<span> ° C</span>`;
+    weatherDayFive.innerText = `${weather.list[39].weather[0].description}`;
+    minMaxDayFive.innerText = `feels like ` + Math.round(weather.list[39].main.feels_like) + `°c`;
 }
 
 

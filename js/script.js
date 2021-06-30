@@ -6,9 +6,10 @@ const currentTemperatureDiv = document.querySelector('.current .temperature');
 const descriptionDiv = document.querySelector('.current .weather');
 const averageDiv = document.querySelector('.min-max');
 let current = new Date();
-const button = document.querySelector('.button')
-const inputValue = document.querySelector('.inputValue')
+const button = document.querySelector('.button');
+const inputValue = document.querySelector('.inputValue');
 const weatherIcon = document.querySelector('.weather-icon');
+
 // Const And Var for Forecast 
 const dateDayOne = document.querySelector('.location-one .date-one');
 const dayOneTemperatureDiv = document.querySelector('.current-one .temperature-one')
@@ -36,7 +37,7 @@ const dayFiveTemperatureDiv = document.querySelector('.current-five .temperature
 const weatherDayFive = document.querySelector('.current-five .weather-five');
 const minMaxDayFive = document.querySelector('.min-max-five');
 
-setInterval(() => { //clock & date (put in README)
+/*setInterval(() => { //clock & date (put in README)
     const time = new Date();
     const month = time.getMonth();
     const date = time.getDate();
@@ -47,7 +48,7 @@ setInterval(() => { //clock & date (put in README)
     const amPm = hour >=12 ? "PM" : "AM";
 
     timeEl.innerHTML = hoursin12HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
-}, 1000)
+}, 1000)*/
 
 
 clickButton = () => {
@@ -58,6 +59,7 @@ clickButton = () => {
         .then (data => {
             displayResults(data)
             let cityDiv = inputValue.value;
+            //let weatherIcon = document.querySelector('.weather-icon').src=(`http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`);
             
 
             
@@ -97,8 +99,8 @@ function displayResults (weather) {
     currentTemperatureDiv.innerHTML = `${Math.round(weather.list[0].main.temp)}<span> ° C</span>`;
     descriptionDiv.innerText = `${weather.list[0].weather[0].description}`;
     averageDiv.innerText = `Feels like ` + Math.round(weather.list[0].main.feels_like) + ' °c';
-    weatherIcon.innerHTML = `${weather.list[0].weather[0].icon};`
-    //console.log(`${weather.list[0].weather[0].icon};`);// WORKS !!!
+    weatherIcon.innerHTML = document.querySelector('.weather-icon').src=(`http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`)
+    console.log(`${weather.list[0].weather[0].icon};`);// WORKS !!!
 
     dateDayOne.innerText = `${weather.list[8].dt_txt}`;
     dayOneTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;

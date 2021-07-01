@@ -48,11 +48,11 @@ setInterval(() => { //clock & date (put in README)
     const date = time.getDate();
     const day = time.getDay();
     const hour = time.getHours();
-    const hoursin12HrFormat = hour > 13 ? hour %12: hour; 
+    const hoursin24HrFormat = hour > 13 ? hour: hour; 
     const minutes = time.getMinutes();
     const amPm = hour >=12 ? "PM" : "AM";
 
-    timeEl.innerHTML = hoursin12HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
+    timeEl.innerHTML = hoursin24HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
 }, 1000)
 
 

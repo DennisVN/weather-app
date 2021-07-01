@@ -1,13 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;400;700&display=swap');
+
 body {
-    background-color: pink;
+    font-family: 'Poppins', sans-serif;
+    background:url('https://images.unsplash.com/photo-1567584032009-620e8a70dbe3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
+    width: 100vh;
+    height: auto;
+    background-repeat: no-repeat;
+    background-size:cover;
+    overflow:hidden;
 }
 
-header {
+.input-field .inputValue {
+    height: 30px;
+    width: 140px;
+    border-radius: 6px;
+    border-style: none;
+}
+#run {
+    height: 35px;
+}
+.header-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    height: auto;
 }
+.date-container {
+    font-weight: 200;
+    color: #fff;
+}
+.date-container .time {
+    font-size: 4.4rem;
+}
+
+.date-container #am-pm {
+    font-size: 2rem;
+    margin-left: 0.5rem;
+}
+
+.date-container .date {
+    font-size: 2rem;
+}
+
 
 #day-zero {
     display: flex;
@@ -15,6 +51,8 @@ header {
     align-items: center;
     text-align: center;
     border-style: solid;
+    width: 100%;
+    height: auto;
 }
 
 #day-one, #day-two, #day-three, #day-four, #day-five {
@@ -25,4 +63,92 @@ header {
     border-style: solid;
     height: 100%;
     width: auto;
+}
+/* MAKE RESPONSIVE FIRST ;) */
+@media only screen and (max-width: 360px) { /*MOBILE*/
+    body {
+        width: 100%;
+    }
+    .header-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-style: none;
+        /*Add input field make up later */ 
+    }
+    .input-field .inputValue {
+        height: 50px;
+        width: 100%;
+        border-radius: 6px;
+        border-style: none;
+        text-align: center;
+        opacity: 75%;
+    }
+    #run {
+        height: 55px;
+        width: 100%;
+        opacity: 75%;
+    }
+    .container {
+        position: absolute;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        padding: -10px;
+    }
+    .zero-container {
+        width: 100%;
+    }
+    .forecast-container {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height: auto;
+    }
+    .date-container {
+        text-align: center;
+        font-weight: 200;
+        color: #fff;
+        font-weight: 100;
+    }
+    .date-container .time {
+        font-size: 4.4rem;
+    }
+    
+    .date-container #am-pm {
+        font-size: 2rem;
+        margin-left: 0.5rem;
+    }
+    
+    .date-container .date {
+        font-size: 2rem;
+    }
+    
+}
+
+@media only screen and (max-width: 730px) {
+    body{
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+        background:url('https://images.unsplash.com/photo-1621274403997-37aace184f49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1');
+        width: 100%;
+        height: auto;
+        background-repeat:repeat;
+        overflow:hidden;
+    }
+    .zero-container {
+        justify-content: start;
+        align-items: none;
+        overflow-y: scroll;
+        width: 100%;
+        height: auto;
+    }
+    .forecast-container {
+        display: flex;
+        overflow-y: scroll;
+        height: auto;
+        width: 100%;
+        height: auto;
+    }
 }

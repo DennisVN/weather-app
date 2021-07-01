@@ -2,12 +2,19 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background:url('https://images.unsplash.com/photo-1567584032009-620e8a70dbe3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');
-    width: 100vh;
+    background:url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
+    width: 100%;
     height: auto;
     background-repeat: no-repeat;
     background-size:cover;
     overflow:hidden;
+}
+
+.temperature {
+    font-size: 50px;
+}
+.weather {
+    font-size: 40;
 }
 
 .input-field .inputValue {
@@ -15,6 +22,9 @@ body {
     width: 140px;
     border-radius: 6px;
     border-style: none;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
 }
 #run {
     height: 35px;
@@ -32,7 +42,8 @@ body {
     color: #fff;
 }
 .date-container .time {
-    font-size: 4.4rem;
+    font-size: 2.5rem;
+    text-align: center;
 }
 
 .date-container #am-pm {
@@ -41,33 +52,35 @@ body {
 }
 
 .date-container .date {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 
 #day-zero {
+    background-color: rgba(6, 7, 7, 0.116);
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    border-style: solid;
-    width: 100%;
     height: auto;
 }
 
 #day-one, #day-two, #day-three, #day-four, #day-five {
+    background-color: rgba(6, 7, 7, 0.116);
+    color: white;
     display: inline-block;
-    flex-direction: column;
     align-items: center;
     text-align: center;
-    border-style: solid;
-    height: 100%;
-    width: auto;
+    width: 350px;
 }
 /* MAKE RESPONSIVE FIRST ;) */
 @media only screen and (max-width: 360px) { /*MOBILE*/
     body {
-        width: 100%;
+        display: inline;
+        align-items: center;
+        justify-content: center;
+
     }
     .header-container {
         display: flex;
@@ -77,31 +90,48 @@ body {
         /*Add input field make up later */ 
     }
     .input-field .inputValue {
-        height: 50px;
         width: 100%;
+        height: 50px;
         border-radius: 6px;
         border-style: none;
         text-align: center;
+        align-items: center;
         opacity: 75%;
+        font-size: 40px;
+    }
+    .input-field .placeholder {
+        font-weight: 200;
     }
     #run {
-        height: 55px;
+        opacity: 85%;
         width: 100%;
-        opacity: 75%;
+        border-radius: 6px;
+        border-style: none;
+        background-color: lightcoral;
+
+
     }
     .container {
         position: absolute;
         align-items: center;
         width: 100%;
         height: auto;
-        padding: -10px;
     }
     .zero-container {
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        background: rgba(24,24,27, 0.6);
+        border-radius: 10px;
+        border: 1px solid #eee;
     }
     .forecast-container {
+        background: rgba(24,24,27,0.8);
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
         width: 100%;
         height: auto;
     }
@@ -116,8 +146,7 @@ body {
     }
     
     .date-container #am-pm {
-        font-size: 2rem;
-        margin-left: 0.5rem;
+        display:hidden;
     }
     
     .date-container .date {
@@ -128,17 +157,15 @@ body {
 
 @media only screen and (max-width: 730px) {
     body{
-        justify-content: start;
         align-items: none;
-        overflow-y: scroll;
-        background:url('https://images.unsplash.com/photo-1621274403997-37aace184f49?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1');
+        background:url('https://images.unsplash.com/photo-1464618663641-bbdd760ae84a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80');
         width: 100%;
         height: auto;
         background-repeat:repeat;
         overflow:hidden;
+
     }
     .zero-container {
-        justify-content: start;
         align-items: none;
         overflow-y: scroll;
         width: 100%;

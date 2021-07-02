@@ -61,7 +61,7 @@ Give It A Try Here : https://dennisvn.github.io/weather-app/
   
   # WIP 
   
-  - Hide everything before click, let appear after click WIP
+  - Hide everything before click, let appear after click WIP. (code is commented out to hide, if you have the solution to let it re-appear you'll earn a pastei de natas !
   - Make fully responive WIP
   - Update basic CSS
   - Call my mother and make her proud with this amazing puzzlework. 

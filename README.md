@@ -66,4 +66,11 @@ Give It A Try Here : https://dennisvn.github.io/weather-app/
   - Update basic CSS
   - Call my mother and make her proud with this amazing puzzlework. 
 
+# Sources used to create this project ; 
+    - Visual Studio code : (https://code.visualstudio.com/) Free
+    - GitHub : (https://github.com/) Free
+    - API from Open Weather : (https://openweathermap.org/api) ! dont forget to create an account for your key ! Free
+    - Icon source from Open Weather :(https://openweathermap.org/img/wn/10d@2x.png) Free 
+    - Image taken from Unsplash : (https://images.unsplash.com) Free
+    
 ## Thank again for peepin, can't wait to see you for our next @becodeorg Project ! 

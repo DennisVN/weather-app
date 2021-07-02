@@ -28,7 +28,11 @@ Give It A Try Here : https://dennisvn.github.io/weather-app/
         - city  (location)
         - date (date)
         - temperature (°C)
+<<<<<<< HEAD
         - weather (description
+=======
+        - weather (description)
+>>>>>>> 9742ae605500d1dcf0c88e5d578d73506a1f3a34
         - weather-icon (icon) 
         - min-max (feels like) 
     -   Repeat this layour for every day after (dayOne, dayTwo, dayThree, ...);  
@@ -61,7 +65,11 @@ Give It A Try Here : https://dennisvn.github.io/weather-app/
   
   # WIP 
   
+<<<<<<< HEAD
   - Hide everything before click, let appear after click WIP
+=======
+  - Hide everything before click, let appear after click WIP. (code is commented out to hide, if you have the solution to let it re-appear you'll earn a pastei de natas !
+>>>>>>> 9742ae605500d1dcf0c88e5d578d73506a1f3a34
   - Make fully responive WIP
   - Update basic CSS
   - Call my mother and make her proud with this amazing puzzlework. 
@@ -73,4 +81,8 @@ Give It A Try Here : https://dennisvn.github.io/weather-app/
 - Icon source from Open Weather :(https://openweathermap.org/img/wn/10d@2x.png) Free 
 - Image taken from Unsplash : (https://images.unsplash.com) Free
     
+<<<<<<< HEAD
 ## Thank again for peepin, can't wait to see you for our next @becodeorg Project ! 
+=======
+## Thanks again for peepin, can't wait to see you for our next @becodeorg Project ! 
+>>>>>>> 9742ae605500d1dcf0c88e5d578d73506a1f3a34

@@ -28,7 +28,7 @@ Give It A Try Here : https://dennisvn.github.io/weather-app/
         - city  (location)
         - date (date)
         - temperature (°C)
-        - weather (description
+        - weather (description)
         - weather-icon (icon) 
         - min-max (feels like) 
     -   Repeat this layour for every day after (dayOne, dayTwo, dayThree, ...);  

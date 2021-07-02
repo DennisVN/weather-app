@@ -33,7 +33,7 @@ Give It A Try Here : https://dennisvn.github.io/weather-app/
         - min-max (feels like) 
     -   Repeat this layour for every day after (dayOne, dayTwo, dayThree, ...);  
 <br>
-### CSS Features : 
+### CSS Features  
 - Partially responsive, WIP ! 
 - background picture : taken from www.unsplash.com, credit to Yuriy Kovalev. 
 

@@ -14,7 +14,7 @@ body {
     font-size: 50px;
 }
 .weather {
-    font-size: 40;
+    font-size: 40px;
 }
 
 .input-field .inputValue {
@@ -73,6 +73,19 @@ body {
     align-items: center;
     text-align: center;
     width: 350px;
+}
+
+.forecast-container {
+    position: absolute; 
+    bottom: 0;
+    width: 100%;
+    height: auto;
+}
+.temperature, .temperature-one, .temperature-two, .temperature-three, .temperature-four, .temperature-five {
+    font-size:35px ;
+}
+.weather, .weather-one, .weather-two, .weather-three, .weather-four, .weather-five {
+    font-size: 25px;
 }
 /* MAKE RESPONSIVE FIRST ;) */
 @media only screen and (max-width: 360px) { /*MOBILE*/

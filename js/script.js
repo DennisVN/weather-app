@@ -9,7 +9,6 @@ let current = new Date();
 const button = document.querySelector('.button');
 const inputValue = document.querySelector('.inputValue');
 const weatherIcon = document.querySelector('.weather-icon');
-
 // Const And Var for Forecast 
 const dateDayOne = document.querySelector('.location-one .date-one');
 const dayOneTemperatureDiv = document.querySelector('.current-one .temperature-one')
@@ -42,6 +41,14 @@ const weatherDayFive = document.querySelector('.current-five .weather-five');
 const minMaxDayFive = document.querySelector('.min-max-five');
 const weatherIconDayFive = document.querySelector('.weather-icon-five');
 
+/*if (`${!inputValue.value}`) {
+    document.querySelector('.wrapper').style.visibility = 'hidden';
+} else if (`${inputValue.value}`) {
+    document.querySelector('.wrapper').style.visibility = 'visible';
+}*/
+    
+
+
 setInterval(() => { //clock & date (put in README)
     const time = new Date();
     const month = time.getMonth();
@@ -59,18 +66,17 @@ setInterval(() => { //clock & date (put in README)
 clickButton = () => {
     
     document.getElementById("run").addEventListener("click", function() {
-        fetch(`http://api.openweathermap.org/data/2.5/forecast?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
         .then(weather => weather.json())
-        .then (data => {
+        .then (data => {//callback
             displayResults(data)
             let cityDiv = inputValue.value;
+            
             //let weatherIcon = document.querySelector('.weather-icon').src=(`http://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`);
             
-
-            
-            console.log(inputValue.value);
+           /* console.log(inputValue.value);
             console.log(cityDiv);
-            console.log(data.list);
+            console.log(data.list);*/
     })
    
 
@@ -78,6 +84,7 @@ clickButton = () => {
     })
 };
 clickButton()
+
 //Add date 
 function setDate(d){
     for (let i = 0; i < 5; i++) {
@@ -93,7 +100,7 @@ function setDate(d){
         let month = months[d.getMonth()];
         let year = d.getFullYear();
 
-        return `${day} ${date} ${month} ${year}`
+        return `${day} ${date} ${month}`
     }
     console.log(months);
 }
@@ -137,6 +144,7 @@ function displayResults (weather) {
     minMaxDayFive.innerText = `feels like ` + Math.round(weather.list[39].main.feels_like) + `°c`;
     weatherIconDayFive.innerHTML = document.querySelector('.weather-icon-five').src=(`http://openweathermap.org/img/wn/${weather.list[39].weather[0].icon}@2x.png`);
 }
+
 
 
 

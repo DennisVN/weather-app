@@ -61,7 +61,7 @@ clickButton = () => {
     document.getElementById("run").addEventListener("click", function() {
         fetch(`https://api.openweathermap.org/data/2.5/forecast?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
         .then(weather => weather.json())
-        .then (data => {//callbackloading
+        .then (data => {
             displayResults(data)
             let cityDiv = inputValue.value; 
     })
@@ -97,7 +97,6 @@ function displayResults (weather) {
     descriptionDiv.innerText = `${weather.list[0].weather[0].description}`;
     averageDiv.innerText = `Feels like ` + Math.round(weather.list[0].main.feels_like) + ' °c';
     weatherIcon.innerHTML = document.querySelector('.weather-icon').src=(`https://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`)
-    console.log(`${weather.list[0].weather[0].icon};`);// WORKS !!!
 
     dateDayOne.innerText = `${weather.list[8].dt_txt}`;
     dayOneTemperatureDiv.innerHTML = `${Math.round(weather.list[8].main.temp)}<span> ° C</span>`;

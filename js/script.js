@@ -41,14 +41,6 @@ const weatherDayFive = document.querySelector('.current-five .weather-five');
 const minMaxDayFive = document.querySelector('.min-max-five');
 const weatherIconDayFive = document.querySelector('.weather-icon-five');
 
-/*if (`${!inputValue.value}`) {
-    document.querySelector('.wrapper').style.visibility = 'hidden';
-} else if (`${inputValue.value}`) {
-    document.querySelector('.wrapper').style.visibility = 'visible';
-}*/
-    
-
-
 setInterval(() => { //clock & date (put in README)
     const time = new Date();
     const month = time.getMonth();
@@ -63,23 +55,16 @@ setInterval(() => { //clock & date (put in README)
 }, 1000)
 
 
+
 clickButton = () => {
     
     document.getElementById("run").addEventListener("click", function() {
         fetch(`https://api.openweathermap.org/data/2.5/forecast?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
         .then(weather => weather.json())
-        .then (data => {//callback
+        .then (data => {//callbackloading
             displayResults(data)
-            let cityDiv = inputValue.value;
-            
-            //let weatherIcon = document.querySelector('.weather-icon').src=(`https://openweathermap.org/img/wn/${weather.list[0].weather[0].icon}@2x.png`);
-            
-           /* console.log(inputValue.value);
-            console.log(cityDiv);
-            console.log(data.list);*/
+            let cityDiv = inputValue.value; 
     })
-   
-
         .catch(err => console.log(err)) 
     })
 };
@@ -144,29 +129,3 @@ function displayResults (weather) {
     minMaxDayFive.innerText = `feels like ` + Math.round(weather.list[39].main.feels_like) + `°c`;
     weatherIconDayFive.innerHTML = document.querySelector('.weather-icon-five').src=(`https://openweathermap.org/img/wn/${weather.list[39].weather[0].icon}@2x.png`);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-/* WORKS : http://api.openweathermap.org/data/2.5/weather?&units=metric&q=Antwerp&appid=ba4146bd03d9855da2254b9e254e92ad */
-
-// USE LATER 
-
-// Update date and time WORKING CLOCK
-
-/* BUTTON WORKS, ADD LATER, STOP WASTING YOUR TIME BRUH -_-" 
-
-clickButton = () => {
-    document.getElementById("run").addEventListener("click", function() {
-        console.log("click")
-    })
-};
-clickButton()*/

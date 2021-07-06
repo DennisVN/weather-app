@@ -1,3 +1,6 @@
+let current = new Date();
+const button = document.querySelector('.button');
+
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
 const cityDiv = document.querySelector('.location .city');
@@ -5,11 +8,9 @@ const dateDiv = document.querySelector('.location .date');
 const currentTemperatureDiv = document.querySelector('.current .temperature');
 const descriptionDiv = document.querySelector('.current .weather');
 const averageDiv = document.querySelector('.min-max');
-let current = new Date();
-const button = document.querySelector('.button');
 const inputValue = document.querySelector('.inputValue');
 const weatherIcon = document.querySelector('.weather-icon');
-// Const And Var for Forecast 
+
 const dateDayOne = document.querySelector('.location-one .date-one');
 const dayOneTemperatureDiv = document.querySelector('.current-one .temperature-one')
 const weatherDayOne = document.querySelector('.current-one .weather-one');
@@ -85,7 +86,7 @@ function setDate(d){
     }
     console.log(months);
 }
-// Change HTML elements after fetching
+
 function displayResults (weather) {
     cityDiv.innerText = `${weather.city.name}, ${weather.city.country}`;
     dateDiv.innerText = setDate(current);

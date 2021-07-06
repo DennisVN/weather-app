@@ -81,7 +81,6 @@ function setDate(d){
         let date = d.getDate();
         let month = months[d.getMonth()];
 
-
         return `${day} ${date} ${month}`
     }
     console.log(months);

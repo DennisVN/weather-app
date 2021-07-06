@@ -41,35 +41,6 @@ const dayFiveTemperatureDiv = document.querySelector('.current-five .temperature
 const weatherDayFive = document.querySelector('.current-five .weather-five');
 const minMaxDayFive = document.querySelector('.min-max-five');
 const weatherIconDayFive = document.querySelector('.weather-icon-five');
-//clock
-setInterval(() => { 
-    const time = new Date();
-    const hour = time.getHours();
-    const hoursin24HrFormat = hour > 13 ? hour: hour; 
-    const minutes = time.getMinutes();
-    const amPm = hour >=12 ? "PM" : "AM";
-
-    timeEl.innerHTML = hoursin24HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
-}, 1000)
-
-//Add date 
-function setDate(d){
-    for (let i = 0; i < 5; i++) {
-        let months = [
-            'January', 'February', 'March', 'April', 'May', 'June',
-            'July', 'August', 'September', 'October', 'November', 'December'
-        ];
-        let weekDays = [
-            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday'
-        ];
-        let day = weekDays[d.getDay()];
-        let date = d.getDate();
-        let month = months[d.getMonth()];
-
-        return `${day} ${date} ${month}`
-    }
-    console.log(months);
-}
 
 clickButton = () => {
     
@@ -122,4 +93,32 @@ function displayResults (weather) {
     weatherDayFive.innerText = `${weather.list[39].weather[0].description}`;
     minMaxDayFive.innerText = `feels like ` + Math.round(weather.list[39].main.feels_like) + `°c`;
     weatherIconDayFive.innerHTML = document.querySelector('.weather-icon-five').src=(`https://openweathermap.org/img/wn/${weather.list[39].weather[0].icon}@2x.png`);
+}
+//Clock & Date
+setInterval(() => { 
+    const time = new Date();
+    const hour = time.getHours();
+    const hoursin24HrFormat = hour > 13 ? hour: hour; 
+    const minutes = time.getMinutes();
+    const amPm = hour >=12 ? "PM" : "AM";
+
+    timeEl.innerHTML = hoursin24HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
+}, 1000)
+
+function setDate(d){
+    for (let i = 0; i < 5; i++) {
+        let months = [
+            'January', 'February', 'March', 'April', 'May', 'June',
+            'July', 'August', 'September', 'October', 'November', 'December'
+        ];
+        let weekDays = [
+            'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday','Saturday'
+        ];
+        let day = weekDays[d.getDay()];
+        let date = d.getDate();
+        let month = months[d.getMonth()];
+
+        return `${day} ${date} ${month}`
+    }
+    console.log(months);
 }

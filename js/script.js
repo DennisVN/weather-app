@@ -52,22 +52,6 @@ setInterval(() => {
     timeEl.innerHTML = hoursin24HrFormat + ':' + minutes + '' + `<span id="am-pm">${amPm}</span>` 
 }, 1000)
 
-
-
-clickButton = () => {
-    
-    document.getElementById("run").addEventListener("click", function() {
-        fetch(`https://api.openweathermap.org/data/2.5/forecast?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
-        .then(weather => weather.json())
-        .then (data => {
-            displayResults(data)
-            let cityDiv = inputValue.value; 
-    })
-        .catch(err => console.log(err)) 
-    })
-};
-clickButton()
-
 //Add date 
 function setDate(d){
     for (let i = 0; i < 5; i++) {
@@ -86,6 +70,20 @@ function setDate(d){
     }
     console.log(months);
 }
+
+clickButton = () => {
+    
+    document.getElementById("run").addEventListener("click", function() {
+        fetch(`https://api.openweathermap.org/data/2.5/forecast?&units=metric&q=${inputValue.value}&appid=ba4146bd03d9855da2254b9e254e92ad`)
+        .then(weather => weather.json())
+        .then (data => {
+            displayResults(data)
+            let cityDiv = inputValue.value; 
+    })
+        .catch(err => console.log(err)) 
+    })
+};
+clickButton()
 
 function displayResults (weather) {
     cityDiv.innerText = `${weather.city.name}, ${weather.city.country}`;

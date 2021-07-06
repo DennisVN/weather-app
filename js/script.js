@@ -49,7 +49,6 @@ clickButton = () => {
         .then(weather => weather.json())
         .then (data => {
             displayResults(data)
-            let cityDiv = inputValue.value; 
     })
         .catch(err => console.log(err)) 
     })

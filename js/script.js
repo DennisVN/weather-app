@@ -83,7 +83,6 @@ function setDate(d){
         let day = weekDays[d.getDay()];
         let date = d.getDate();
         let month = months[d.getMonth()];
-        let year = d.getFullYear();
 
         return `${day} ${date} ${month}`
     }

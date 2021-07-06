@@ -1,6 +1,6 @@
 const timeEl = document.getElementById('time');
 const dateEl = document.getElementById('date');
-const cityDiv = document.querySelector('.location .city'); //Assigned
+const cityDiv = document.querySelector('.location .city');
 const dateDiv = document.querySelector('.location .date');
 const currentTemperatureDiv = document.querySelector('.current .temperature');
 const descriptionDiv = document.querySelector('.current .weather');
@@ -40,8 +40,8 @@ const dayFiveTemperatureDiv = document.querySelector('.current-five .temperature
 const weatherDayFive = document.querySelector('.current-five .weather-five');
 const minMaxDayFive = document.querySelector('.min-max-five');
 const weatherIconDayFive = document.querySelector('.weather-icon-five');
-
-setInterval(() => { //clock & date (put in README)
+//clock
+setInterval(() => { 
     const time = new Date();
     const hour = time.getHours();
     const hoursin24HrFormat = hour > 13 ? hour: hour; 

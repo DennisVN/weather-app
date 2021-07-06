@@ -43,9 +43,6 @@ const weatherIconDayFive = document.querySelector('.weather-icon-five');
 
 setInterval(() => { //clock & date (put in README)
     const time = new Date();
-    const month = time.getMonth();
-    const date = time.getDate();
-    const day = time.getDay();
     const hour = time.getHours();
     const hoursin24HrFormat = hour > 13 ? hour: hour; 
     const minutes = time.getMinutes();
@@ -83,6 +80,7 @@ function setDate(d){
         let day = weekDays[d.getDay()];
         let date = d.getDate();
         let month = months[d.getMonth()];
+
 
         return `${day} ${date} ${month}`
     }
